@@ -71,6 +71,9 @@ export default function App() {
             <button onClick={rollDice} className='roll-button' ref={buttonRef}>
                 {gameWon ? "New game" : "Roll"}
             </button>
+            <button className='reset-button' onClick={()=> setDice(generateAllNewDice())}>
+                Reset
+            </button>
         </main>
     )
 }

@@ -71,6 +71,10 @@ main > p {
     font-family: 'karla',sans-serif;
 }
 
+.reset-button {
+    
+}
+
 .sr-only {
     position: absolute;
     width: 1px;
