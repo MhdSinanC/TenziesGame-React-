@@ -27,13 +27,13 @@ main {
     padding: 10px 27px;
 }
 
-main > h1 {
+main>h1 {
     font-size: 26px;
     font-weight: 700;
     margin: 0;
 }
 
-main > p {
+main>p {
     text-align: center;
     margin: 0;
 }
@@ -68,11 +68,18 @@ main > p {
     background-color: #5035FF;
     color: white;
     font-weight: 700;
-    font-family: 'karla',sans-serif;
+    font-family: 'karla', sans-serif;
 }
 
 .reset-button {
-    
+    padding: 5px 15px;
+    background-color: black;
+    color: white;
+    font-family: 'karla', sans-serif;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .sr-only {
