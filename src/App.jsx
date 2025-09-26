@@ -48,6 +48,13 @@ export default function App() {
         }
     }
 
+
+    const heldCount = dice.filter((die) => die.isHeld).length;
+    
+    const reset = () => {
+        setDice(generateAllNewDice());
+    }
+
     const diceElements = dice.map(dieObj => (
         <Die
             key={dieObj.id}
@@ -59,7 +66,7 @@ export default function App() {
 
     return (
         <main>
-            {gameWon && <ReactConfetti recycle={false} numberOfPieces={500} gravity={0.3}/>}
+            {gameWon && <ReactConfetti recycle={false} numberOfPieces={500} gravity={0.3} />}
             <div aria-live='polite' className='sr-only'>
                 {gameWon && <p>Congratulations, you won..</p>}
             </div>
@@ -68,12 +75,18 @@ export default function App() {
             <div className="container">
                 {diceElements}
             </div>
-            <button onClick={rollDice} className='roll-button' ref={buttonRef}>
-                {gameWon ? "New game" : "Roll"}
-            </button>
-            <button className='reset-button' onClick={()=> setDice(generateAllNewDice())}>
-                Reset
-            </button>
+            <div className='button-container'>
+                <button onClick={rollDice} className='roll-button' ref={buttonRef}>
+                    {gameWon ? "New game" : "Roll"}
+                </button>
+
+                {heldCount >= 4 && <button className='reset-button' onClick={reset}>
+                    Reset
+                </button>}
+            </div>
+
+
+
         </main>
     )
 }

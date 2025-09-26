@@ -60,6 +60,11 @@ main>p {
     cursor: pointer;
 }
 
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
 .roll-button {
     width: 92px;
     height: 35px;
