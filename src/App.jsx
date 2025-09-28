@@ -50,7 +50,7 @@ export default function App() {
 
 
     const heldCount = dice.filter((die) => die.isHeld).length;
-    
+
     const reset = () => {
         setDice(generateAllNewDice());
     }
@@ -80,13 +80,11 @@ export default function App() {
                     {gameWon ? "New game" : "Roll"}
                 </button>
 
-                {heldCount >= 4 && <button className='reset-button' onClick={reset}>
+
+                <button className='reset-button' onClick={reset} disabled={heldCount < 4}>
                     Reset
-                </button>}
+                </button>
             </div>
-
-
-
         </main>
     )
 }
